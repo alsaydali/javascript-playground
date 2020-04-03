@@ -54,3 +54,67 @@ pic.setAttribute("marwan-is-good", "really");
 pic.getAttribute("alt");
 //get list pf attrs
 pic.dataset;
+
+//Day2
+
+//creating new element
+// make a paragrap p with text inside and class
+const myParagraph = document.createElement("p");
+myParagraph.textContent = "I am cool";
+myParagraph.classList.add("special");
+
+// create img
+const myImsge = document.createElement("img");
+myImsge.src = "https://picsum.photo/500";
+myImsge.alt = "nice photo";
+
+//create div
+
+const myDiv = document.createElement("div");
+myDiv.classList.add("container");
+
+// Add the img to the div
+
+myDiv.appendChild(myImsge);
+myDiv.appendChild(myParagraph);
+
+// then add to body * order is better add everything you need before append to html
+document.body.appendChild(myDiv);
+//use insertAdjacentText  if you want to but that div before anything for example like earlier
+document.body.insertAdjacentText("afterbegin", myDiv); // inside the corrent tags in the beganing
+
+//other way with string
+
+const width = 400;
+const src = `https://picsum.phots/${width}`;
+const desc = `Cute pic`;
+const myHtml = `
+  <div class="container">
+    <h2> Cute ${desc}</h2>
+    <img src=${src} alt=${desc} >
+  </div>
+`;
+// turn the string into DOM element
+const myFragment = document.createRange().createContextualFragment(myHtml);
+// append it
+document.body.appendChild(myFragment);
+
+//Traversing and Removing Nodes
+// sone usful way to traversing
+
+const me = document.querySelector(".me");
+//see children elements
+me.children;
+//see first chile
+me.firstElementChild;
+//see last child
+me.lastElementChild;
+//see previous element
+me.previousElementSibling;
+//see next element
+me.nextElementSibling;
+// see the parent
+me.parentElement;
+
+//remove
+me.remove();
