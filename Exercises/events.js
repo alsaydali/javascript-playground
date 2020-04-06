@@ -21,3 +21,9 @@ const handleBuyClick = (buybutton) => {
 };
 // add it to forEach so it can loop all over the elements
 buyBtn.forEach(handleBuyClick);
+
+//Events - targets, bubbling, propagation and capture
+// read about
+//event.stopPropagation;
+//event.target;
+//event.currentTarget;
